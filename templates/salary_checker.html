@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<h1>Add New Adam Sandler Content</h1>
+<form method="POST">
+    {% csrf_token %}
+    salary: <textarea name="salary" rows="1" cols="50"></textarea><br>
+    <input type="submit">
+</form><br>
+{% if flag == 1 %}
+<table border="1" width="40%">
+    <th>Title</th>  
+    {% for content in sql_res3 %}
+        <tr>
+            <td> {{ content.title }} </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endif %}

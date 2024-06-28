@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{%  static 'style.css' %}">
+<h1>Add Content</h1>
+<form method="POST">
+    {% csrf_token %}
+    title: <textarea name="title" rows="1" cols="50"></textarea><br>
+    language: <textarea name="language" rows="1" cols="50"></textarea><br>
+    <input type="submit">
+</form>
+
+

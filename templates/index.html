@@ -1,0 +1,30 @@
+
+{% load static %}
+<link rel="stylesheet" href="{%  static 'style.css' %}">
+<h1>Netflix App</h1>
+<h2>New Contents</h2>
+<table border="=1" width="40%">
+    <th>Title</th>
+    <th>Language</th>
+    <th>Release Date</th>
+        {% for content in sql_res %}
+            <tr>
+            <td>{{ content.Title }} </td>
+            <td>{{ content.Language }} </td>
+            <td>{{ content.Release_Date }} </td>
+            </tr>
+        {% endfor %}
+</table><br><br>
+<h2>Sandler's Contents</h2>
+<table border="=1" width="20%">
+    <th>Title</th>
+        {% for content in sql_res2 %}
+            <tr>
+                <td> {{ content.title }}</td>
+            </tr>
+        {% endfor %}
+</table><br><br>
+
+<a href="add_content">Add New Content Item</a><br>
+<a href="salary_checker">Salary Checker</a><br>
+<img src="{% static "zohan.jpg" %}" alt="zohan"/>
